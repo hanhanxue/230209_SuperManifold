@@ -1,0 +1,12 @@
+// ./styles/_button.scss
+// ./styles/_button.scss
+
+.btn-link {
+    //@apply flexed py-1.5 px-4 md:px-5 rounded-md text-sm md:text-base font-semibold border-2 transition-all duration-500 ease-in-out text-mt-black2 border-mt-black2;
+  
+    &:hover {
+      //@apply bg-black text-white;
+      box-shadow: 3px 6px 20px rgba(0, 0, 0, 0.336);
+    }
+  }
+
