@@ -8,13 +8,18 @@ import { useScrollPosition } from "../hooks/useScrollPosition"
 
 export default function Home() {
 
-  const scrollPosition = useScrollPosition()
+  const [direction, directionChange, scrollPosition, scrollPositionAtChange] = useScrollPosition()
 
-  console.log(scrollPosition)
 
   function classNames(...classes: (string | undefined | null)[]): string {
     return classes.filter(Boolean).join(' ');
   }
+
+
+
+
+
+
 
   return (
     <>
@@ -29,7 +34,7 @@ export default function Home() {
 
 
     {/* `fixed w-full bg-black`   */}
-    <header className={classNames(scrollPosition > 0 ? '' : '', 'fixed', 'w-full', 'transition-colors')}>
+    <header className={classNames(  'fixed', 'w-full', 'transition-colors')}>
       <nav className="">
         <div className="container mx-auto ">
           <div className="py-4 flex items-center">
@@ -38,9 +43,9 @@ export default function Home() {
               <Link href="/">
                 <Image 
                   alt="Super Manifold Logo"
-                  src="/logo/230217_SuperManifold-white.svg" 
-                  height={36} 
-                  width={243} 
+                  src="/logo/230222_SuperManifold-white.svg" 
+                  height={30} 
+                  width={215} 
                 />  
               </Link>
             </div>
@@ -62,7 +67,7 @@ export default function Home() {
     <div>
       <Image
         alt="Super Manifold B1-H"
-        src="/temp/230212_init_cc japaneseKerning.jpg"
+        src="/temp/230225_gapvarLogovector.jpg"
         width={5120}
         height={2880}
         sizes="100vw"
@@ -75,7 +80,7 @@ export default function Home() {
     <div>
       <Image
         alt="Super Manifold B1-H"
-        src="/temp/230212_init_cc japaneseKerning.jpg"
+        src="/temp/230225_gapvarLogovector.jpg"
         width={5120}
         height={2880}
         sizes="100vw"
@@ -88,7 +93,7 @@ export default function Home() {
     <div>
       <Image
         alt="Super Manifold B1-H"
-        src="/temp/230212_init_cc japaneseKerning.jpg"
+        src="/temp/230225_gapvarLogovector.jpg"
         width={5120}
         height={2880}
         sizes="100vw"
@@ -115,3 +120,34 @@ export default function Home() {
 // style={{
 //   objectFit: 'cover',
 // }}
+
+
+// const generateStyle = (
+//   direction: number | boolean, 
+//   directionChange: number | boolean, 
+//   scrollPosition: number | boolean, 
+//   scrollPositionAtChange: number | boolean) => {
+
+//   let anchor: number | boolean = 500 
+//   let style: string = '' 
+
+
+
+//   if(scrollPosition < 500) {
+//     style = `fixed`
+//     //console.log(style)
+
+//   } else if (!direction) {
+//     anchor = Math.trunc(Number(scrollPositionAtChange))
+//     style = `absolute top-[${anchor}px]`
+//     style = `absolute top-[725px]`
+//   }
+//   else {
+//     style = `absolute top-[${anchor}px]`
+//     //console.log(style)
+//   }
+
+  
+//   console.log(style)
+//   return style
+// }
